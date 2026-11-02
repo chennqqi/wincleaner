@@ -259,6 +259,10 @@ main {
   background: rgba(18, 24, 32, 0.42);
 }
 
+.scrim[hidden] {
+  display: none;
+}
+
 .dialog {
   width: min(460px, calc(100vw - 48px));
   padding: 20px;
