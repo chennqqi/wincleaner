@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>WinCleaner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="icon.png" width="28" height="28" alt="" />
+      <div>
+        <h1>WinCleaner</h1>
+        <p>临时目录清理 · 相同模式已归并，可清理项默认勾选</p>
+      </div>
+    </div>
+    <div class="total">
+      <strong id="chosen-bytes">0 B</strong>
+      <span>已选可释放</span>
+    </div>
+    <div class="caption">
+      <button id="win-min" type="button" aria-label="最小化"><span></span></button>
+      <button id="win-max" type="button" aria-label="最大化"><span></span></button>
+      <button id="win-close" class="close" type="button" aria-label="关闭"><span></span></button>
+    </div>
+  </header>
+  <div id="progress" class="progress" hidden><span id="progress-bar"></span></div>
+  <div class="toolbar">
+    <div class="buttons">
+      <button id="scan" class="primary" type="button">重新扫描</button>
+      <button id="clean" class="danger" type="button">清理选中</button>
+      <button id="defaults" type="button">恢复默认</button>
+      <button id="all" type="button">全选</button>
+      <button id="none" type="button">全不选</button>
+      <button id="invert" type="button">反选</button>
+    </div>
+    <p id="status">准备扫描…</p>
+  </div>
+  <main>
+    <section class="card">
+      <h2>分组</h2>
+      <div id="groups" class="list"></div>
+    </section>
+    <section class="card">
+      <h2 id="item-title">内容</h2>
+      <div id="items" class="list"></div>
+    </section>
+  </main>
+  <pre id="log" class="log"></pre>
+  <div id="dialog" class="scrim" hidden>
+    <div class="dialog" role="dialog" aria-modal="true">
+      <h3 id="dialog-title"></h3>
+      <p id="dialog-body"></p>
+      <div class="dialog-actions">
+        <button id="dialog-no" type="button">取消</button>
+        <button id="dialog-yes" class="primary" type="button">确定</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
